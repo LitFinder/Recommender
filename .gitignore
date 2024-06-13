@@ -1,1 +1,8 @@
 *.csv
+variables.*
+*.Identifier
+*.sqlite3
+*.data-*
+*.bin
+*.pt
+*.index

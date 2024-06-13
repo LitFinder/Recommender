@@ -7,6 +7,7 @@ from langchain_chroma import Chroma
 from langchain_community.embeddings.sentence_transformer import SentenceTransformerEmbeddings
 import tensorflow as tf  # Make sure TensorFlow is imported to use the model
 
+
 # Load your data
 books = pd.read_csv("books_data_clean.csv")
 rating = pd.read_csv("books_rating_clean.csv")
@@ -14,8 +15,6 @@ final_ratings = pd.read_csv("final_ratings.csv")
 merged_df = pd.merge(rating, books, on='Title')
 
 
-# Load the pre-trained recommendation model
-model = tf.keras.models.load_model("Colab_User")
 # Map user ID to a "user vector" via an embedding matrix
 user_ids = merged_df["User_id"].unique().tolist()
 user2user_encoded = {x: i for i, x in enumerate(user_ids)}
@@ -36,7 +35,11 @@ pivot_table = final_ratings.pivot_table(index='Title', columns='User_id', values
 pivot_table.fillna(0, inplace=True)
 similarity_score = cosine_similarity(pivot_table)
 
+# Load the pre-trained recommendation model
+model = tf.keras.models.load_model("Colab_User")
+
 app = FastAPI()
+
 
 # Collaborative filtering recommendation function
 @app.get("/colabBook/")
@@ -51,26 +54,46 @@ async def recommend(id_book: int = Query(...), amount: int = Query(...)):
 
     index = np.where(pivot_table.index == book_name)[0][0]
     similar_books = sorted(list(enumerate(similarity_score[index])), key=lambda x: x[1], reverse=True)[1:amount + 1]
+    
+    recommended_books = []
+    for idx, _ in similar_books:
+        recommended_book = books[books["Title"] == pivot_table.index[idx]]
+        recommended_books.append(recommended_book)
+        
+    recommendations = []
+    for index, row in pd.concat(recommended_books).iterrows():
+        recommendations.append(row["Unnamed: 0"])
+    
+    return {
+        # "user_id": user_id,
+        # "top_books_user": top_books,
+        "recommendations": recommendations
+    }
 
-    data = []
-    for i in similar_books:
-        temp_book = books[books['Title'] == pivot_table.index[i[0]]]
-        item = {
-            "title": temp_book.drop_duplicates('Title')['Title'].values[0],
-            "authors": temp_book.drop_duplicates('Title')['authors'].values[0],
-            "image": temp_book.drop_duplicates('Title')['image'].values[0]
-        }
-        data.append(item)
-    return data
+    # data = []
+    # for idx, _ in similar_books:
+    #     temp_book = books[books['Title'] == pivot_table.index[idx]]
+    #     temp_book = temp_book.drop_duplicates('Title')
+    #     if temp_book.empty:
+    #         continue
+    #     item = {
+    #         "title": temp_book['Title'].values[0],
+    #         "authors": temp_book['authors'].values[0],
+    #         "image": temp_book['image'].values[0],
+    #         # "id": temp_book.iloc[0, 0]  # Access the first column value dynamically
+    #     }
+    #     data.append(item)
+    # return data
 
 # Vector-based recommendation endpoint
+#taruh luar biar langsung ke load
+persist_directory = "db"
+embedding = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
+vectordb = Chroma(persist_directory=persist_directory, embedding_function=embedding)
+
 @app.get("/recommendation/")
 async def recommendation(id_book: List[int] = Query(...)):
-    persist_directory = "db"
-    embedding = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
-
-    vectordb = Chroma(persist_directory=persist_directory, embedding_function=embedding)
-
+    
     k_recommendation = max(1, round(100 / len(id_book)))
     
     all_recommendation = []
@@ -116,25 +139,24 @@ async def recommend_for_user(user_id: str = Query(...), amount: int = Query(...)
         book_encoded2book.get(books_not_watched[x][0]) for x in top_ratings_indices
     ]
 
-    top_books_user = (
-        books_watched_by_user.sort_values(by="rating", ascending=False)
-        .head(5)
-        .Title.values
-    )
-    books_rows = books[books["Title"].isin(top_books_user)]
-    top_books = []
-    for row in books_rows.itertuples():
-        top_books.append({"title": row.Title, "categories": row.categories})
+    # top_books_user = (
+    #     books_watched_by_user.sort_values(by="rating", ascending=False)
+    #     .head(5)
+    #     .Title.values
+    # )
+    # books_rows = books[books["Title"].isin(top_books_user)]
+    # top_books = []
+    # for row in books_rows.itertuples():
+    #     top_books.append({"title": row.Title, "categories": row.categories})
 
     recommended_books = books[books["Title"].isin(recommended_book_ids)]
     recommendations = []
-    for row in recommended_books.itertuples():
-        recommendations.append({"title": row.Title, "categories": row.categories})
-
+    for index, row in recommended_books.iterrows():
+        recommendations.append(row["Unnamed: 0"])
     return {
-        "user_id": user_id,
-        "top_books_user": top_books,
-        "recommended_books": recommendations
+        # "user_id": user_id,
+        # "top_books_user": top_books,
+        "recommendations": recommendations
     }
 
 # Endpoint for root

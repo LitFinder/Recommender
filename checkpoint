@@ -1,0 +1,2 @@
+model_checkpoint_path: "Colab_User_Weight"
+all_model_checkpoint_paths: "Colab_User_Weight"
