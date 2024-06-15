@@ -1,17 +1,22 @@
 from langchain_community.document_loaders.csv_loader import CSVLoader
 from langchain_chroma import Chroma
 from langchain_community.embeddings.sentence_transformer import SentenceTransformerEmbeddings
-from sentence_transformers import SentenceTransformer
-from transformers import AutoTokenizer, AutoModel
-import torch.nn as nn
-import torch
-from langchain_huggingface import HuggingFaceEmbeddings
+
+import pandas as pd
+
+df = pd.read_csv("books_data_clean.csv")
+df.drop(columns=["Unnamed: 0"], inplace=True)
+df.head()
+df["Metadata"] = df.apply(
+    lambda row: f"Book titled '{row['Title']}'. Description: {row['description']}. "
+                f"Authors: {row['authors']}. Published by {row['publisher']}. "
+                f"Category: {row['categories']}. Rating: {row['ratingsCount']}.", axis=1)
+
+df.to_csv("data_book_metadata.csv", index=False)
 
 # Load the CSV data
 loader = CSVLoader(file_path="data_book_metadata.csv", encoding="utf-8")
 data = loader.load()
-
-model = AutoModel.from_pretrained('sentence-transformers/all-MiniLM-L6-v2')
 
 # # Define the fine-tuning model
 # class FineTuningModel(nn.Module):
