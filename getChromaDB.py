@@ -4,11 +4,11 @@ from langchain_community.embeddings.sentence_transformer import SentenceTransfor
 
 import pandas as pd
 
-df = pd.read_csv("books_data_clean.csv")
-df.drop(columns=["Unnamed: 0"], inplace=True)
+df = pd.read_csv("books_data_clean_with_id.csv")
+
 df.head()
 df["Metadata"] = df.apply(
-    lambda row: f"Book titled '{row['Title']}'. Description: {row['description']}. "
+    lambda row: f"Book titled '{row['title']}'. Description: {row['description']}. "
                 f"Authors: {row['authors']}. Published by {row['publisher']}. "
                 f"Category: {row['categories']}. Rating: {row['ratingsCount']}.", axis=1)
 
@@ -54,4 +54,4 @@ folder_db = "db"
 # Load it into Chroma
 db = Chroma.from_documents(data, embedding_function, persist_directory=folder_db)
 
-print("Data loaded into Chroma with fine-tuned embeddings.")
+print("Data loaded into Chroma with embeddings.")

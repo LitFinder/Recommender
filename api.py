@@ -23,31 +23,31 @@ logger = logging.getLogger(__name__)
 
 def load_data():
     # Load your data
-    books = pd.read_csv("books_data_clean.csv")
-    ratings_df  = pd.read_csv("books_rating_clean.csv")
+    books = pd.read_csv("books_data_clean_with_id.csv")
+    ratings_df  = pd.read_csv("books_rating_clean_with_book_id.csv")
     final_ratings = pd.read_csv("final_ratings.csv")
-    merged_df = pd.merge(ratings_df , books, on='Title')
+    merged_df = pd.merge(ratings_df, books, left_on='book_id', right_on='id')
 
     persist_directory = "db"
     embedding = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
     vectordb = Chroma(persist_directory=persist_directory, embedding_function=embedding)
 
     # Map user ID to a "user vector" via an embedding matrix
-    user_ids = merged_df["User_id"].unique().tolist()
+    user_ids = merged_df["user_id"].unique().tolist()
     user2user_encoded = {x: i for i, x in enumerate(user_ids)}
     userencoded2user = {i: x for i, x in enumerate(user_ids)}
     # Map books ID to a "books vector" via an embedding matrix
-    book_ids = merged_df["Title"].unique().tolist()
+    book_ids = merged_df["book_id"].unique().tolist()
     book2book_encoded = {x: i for i, x in enumerate(book_ids)}
     book_encoded2book = {i: x for i, x in enumerate(book_ids)}
-    merged_df["user"] = merged_df["User_id"].map(user2user_encoded)
-    merged_df["book"] = merged_df["Title"].map(book2book_encoded)
+    merged_df["user"] = merged_df["user_id"].map(user2user_encoded)
+    merged_df["book"] = merged_df["book_id"].map(book2book_encoded)
     num_users = len(user2user_encoded)
     num_books = len(book_encoded2book)
     merged_df['rating'] = merged_df['review/score'].values.astype(np.float32)
 
     # Create pivot table and calculate similarity score
-    pivot_table = final_ratings.pivot_table(index='Title', columns='User_id', values='review/score')
+    pivot_table = final_ratings.pivot_table(index='book_id', columns='user_id', values='review/score')
     pivot_table.fillna(0, inplace=True)
     similarity_score = cosine_similarity(pivot_table)
 
@@ -127,7 +127,7 @@ async def recommendation(request: RecommendationRequest):
     vectordb = app.state.data["vectordb"]
     # Fungsi untuk mendapatkan buku dengan rating tertinggi
     def get_top_rated_books(n: int):
-        df = pd.read_csv('books_data_clean.csv') # Ubah sesuai dengan path file Anda
+        df = pd.read_csv('books_data_clean_with_id.csv') # Ubah sesuai dengan path file Anda
         df_sorted = df.sort_values(by='ratingsCount', ascending=False)
         top_100 = df_sorted.head(n)
         return top_100.index.tolist()
@@ -162,24 +162,24 @@ async def recommend(id_book: int = Query(...), amount: int = Query(...)):
     pivot_table = app.state.data["pivot_table"]
     similarity_score = app.state.data["similarity_score"]
     try:
-        book_name = books.loc[books.iloc[:, 0] == id_book, 'Title'].values[0]
+        book_getId = books.loc[books.id == id_book, 'id'].values[0]
     except IndexError:
         raise HTTPException(status_code=404, detail="Book ID not found")
     
-    if book_name not in pivot_table.index:
+    if book_getId not in pivot_table.index:
         raise HTTPException(status_code=404, detail="Book title not found in pivot table")
 
-    index = np.where(pivot_table.index == book_name)[0][0]
+    index = np.where(pivot_table.index == book_getId)[0][0]
     similar_books = sorted(list(enumerate(similarity_score[index])), key=lambda x: x[1], reverse=True)[1:amount + 1]
     
     recommended_books = []
     for idx, _ in similar_books:
-        recommended_book = books[books["Title"] == pivot_table.index[idx]]
+        recommended_book = books[books["id"] == pivot_table.index[idx]]
         recommended_books.append(recommended_book)
         
     recommendations = []
     for index, row in pd.concat(recommended_books).iterrows():
-        recommendations.append(row["Unnamed: 0"])
+        recommendations.append(row["id"])
     
     return {
         # "user_id": user_id,
@@ -197,8 +197,8 @@ async def recommend_for_user(user_id: str = Query(...), amount: int = Query(...)
     merged_df = app.state.data["merged_df"]
     model = app.state.data["model"]
     
-    books_watched_by_user = merged_df[merged_df.User_id == user_id]
-    books_not_watched = books[~books['Title'].isin(books_watched_by_user.Title.values)]['Title']
+    books_watched_by_user = merged_df[merged_df.user_id == user_id]
+    books_not_watched = books[~books['id'].isin(books_watched_by_user.book_id.values)]['id']
 
     books_not_watched = list(set(books_not_watched).intersection(set(book2book_encoded.keys())))
 
@@ -219,10 +219,10 @@ async def recommend_for_user(user_id: str = Query(...), amount: int = Query(...)
         book_encoded2book.get(books_not_watched[x][0]) for x in top_ratings_indices
     ]
 
-    recommended_books = books[books["Title"].isin(recommended_book_ids)]
+    recommended_books = books[books["id"].isin(recommended_book_ids)]
     recommendations = []
     for index, row in recommended_books.iterrows():
-        recommendations.append(row["Unnamed: 0"])
+        recommendations.append(row["id"])
     return {
         "recommendations": recommendations
     }
@@ -230,10 +230,10 @@ async def recommend_for_user(user_id: str = Query(...), amount: int = Query(...)
     
 # ------------------------- Add New Rating Data -------------------------
 class NewRating(BaseModel):
-    Id: str
-    Title: str
-    Price: float
-    User_id: str
+    id: int
+    book_id: int
+    price: float
+    user_id: str
     profileName: str
     review_helpfulness: str
     review_score: float
@@ -246,10 +246,10 @@ async def add_rating(new_rating: NewRating, background_tasks: BackgroundTasks):
     try:
         # Create a new DataFrame from the incoming data
         new_data = pd.DataFrame([{
-            "Id": new_rating.Id,
-            "Title": new_rating.Title,
-            "Price": new_rating.Price,
-            "User_id": new_rating.User_id,
+            "id": new_rating.id,  # Use `book_id` from the NewRating instance
+            "book_id": new_rating.book_id,  # Use `book_id` from the NewRating instance
+            "price": new_rating.price,
+            "user_id": new_rating.user_id,
             "profileName": new_rating.profileName,
             "review/helpfulness": new_rating.review_helpfulness,
             "review/score": new_rating.review_score,
@@ -272,7 +272,7 @@ async def add_rating(new_rating: NewRating, background_tasks: BackgroundTasks):
 
 def save_ratings_to_csv():
     ratings_df = app.state.data["ratings_df"]
-    ratings_df.to_csv("books_rating_clean.csv", index=False)
+    ratings_df.to_csv("books_rating_clean_with_book_id.csv", index=False)
 
 # Endpoint for root
 @app.get("/")

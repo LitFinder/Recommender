@@ -5,24 +5,22 @@ from tensorflow.keras import layers
 from tensorflow import keras
 
 # Load data
-book_df = pd.read_csv('books_data_clean.csv')
-rating_df = pd.read_csv('books_rating_clean.csv')
-merged_df = pd.merge(rating_df, book_df, on='Title')
-merged_df.pop('Unnamed: 0_x')
-merged_df.pop('Unnamed: 0_y')
+book_df = pd.read_csv('books_data_clean_with_id.csv')
+rating_df = pd.read_csv('books_rating_clean_with_book_id.csv')
+merged_df = pd.merge(rating_df, book_df, left_on='book_id', right_on='id')
 
 # Map user ID to a "user vector" via an embedding matrix
-user_ids = merged_df["User_id"].unique().tolist()
+user_ids = merged_df["user_id"].unique().tolist()
 user2user_encoded = {x: i for i, x in enumerate(user_ids)}
 userencoded2user = {i: x for i, x in enumerate(user_ids)}
 
 # Map books ID to a "books vector" via an embedding matrix
-book_ids = merged_df["Title"].unique().tolist()
+book_ids = merged_df["book_id"].unique().tolist()
 book2book_encoded = {x: i for i, x in enumerate(book_ids)}
 book_encoded2book = {i: x for i, x in enumerate(book_ids)}
 
-merged_df["user"] = merged_df["User_id"].map(user2user_encoded)
-merged_df["book"] = merged_df["Title"].map(book2book_encoded)
+merged_df["user"] = merged_df["user_id"].map(user2user_encoded)
+merged_df["book"] = merged_df["book_id"].map(book2book_encoded)
 
 num_users = len(user2user_encoded)
 num_books = len(book_encoded2book)
