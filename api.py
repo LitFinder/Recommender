@@ -10,6 +10,8 @@ import tensorflow as tf  # Make sure TensorFlow is imported to use the model
 from apscheduler.schedulers.background import BackgroundScheduler
 import subprocess
 import logging
+from tensorflow import keras
+from scipy.sparse import load_npz
 
 logging.basicConfig(
     level=logging.INFO,  # Set the minimum log level (e.g., INFO, DEBUG)
@@ -25,7 +27,7 @@ def load_data():
     # Load your data
     books = pd.read_csv("books_data_clean_with_id.csv")
     ratings_df  = pd.read_csv("books_rating_clean_with_book_id.csv")
-    final_ratings = pd.read_csv("final_ratings.csv")
+    # final_ratings = pd.read_csv("final_ratings.csv")
     # pivot_table = pd.read_csv("PivotTable.csv")
     merged_df = pd.merge(ratings_df, books, left_on='book_id', right_on='id')
 
@@ -48,18 +50,26 @@ def load_data():
     merged_df['rating'] = merged_df['review/score'].values.astype(np.float32)
 
     # Create pivot table and calculate similarity score
-    pivot_table = final_ratings.pivot_table(index='book_id', columns='user_id', values='review/score')
-    pivot_table.fillna(0, inplace=True)
+    # pivot_table = final_ratings.pivot_table(index='book_id', columns='user_id', values='review/score')
+    # pivot_table.fillna(0, inplace=True)
+    # Load the csr_matrix
+    csr_pivot_table = load_npz('pivot_table.npz')
+    pivot_table_index = pd.read_csv('pivot_table_index.csv', index_col=0)
+    pivot_table_columns = pd.read_csv('pivot_table_columns.csv', index_col=0)
+    # Convert the CSR matrix back to a dense array
+    dense_pivot_table = csr_pivot_table.toarray()
+    # Convert the dense array back to a pandas DataFrame
+    pivot_table = pd.DataFrame(dense_pivot_table, index=pivot_table_index.squeeze(), columns=pivot_table_columns.squeeze())
     similarity_score = cosine_similarity(pivot_table)
 
     # Load the pre-trained recommendation model
-    model = tf.keras.models.load_model("Colab_User")
+    model = keras.models.load_model("Colab_User")
     
-    # Return necessary data as a dictionary
+    # Return necessary data as a dictionaryz
     return {
         "books": books,
         "ratings_df": ratings_df,
-        "final_ratings": final_ratings,
+        # "final_ratings": final_ratings,
         "merged_df": merged_df,
         "persist_directory": persist_directory,
         "embedding": embedding,

@@ -135,3 +135,4 @@ history = model.fit(
 
 # Save the retrained model
 model.save('Colab_User', save_format='tf')
+model.save('Colab_User.h5')
