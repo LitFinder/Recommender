@@ -5,7 +5,7 @@ ratings = pd.read_csv("books_rating_clean_with_book_id.csv")
 
 df = pd.merge(ratings, books, left_on='book_id', right_on='id')
 
-min_ratings_count_threshold=50
+min_ratings_count_threshold=10
 rating_counts= df.groupby('book_id').count()['review/score']
 popular_books = rating_counts[rating_counts >= min_ratings_count_threshold].index
 

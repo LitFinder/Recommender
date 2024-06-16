@@ -48,7 +48,7 @@ x_train, x_val, y_train, y_val = (
     y[train_indices:],
 )
 
-EMBEDDING_SIZE = 256
+EMBEDDING_SIZE = 64
 
 @keras.utils.register_keras_serializable(package="RecommenderPackage")
 class RecommenderNet(keras.Model):
@@ -119,14 +119,18 @@ model.compile(
     metrics=['mse', 'accuracy']
 )
 
+# Callbacks
+early_stopping = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=3, restore_best_weights=True)
+
 # Continue training the model
 history = model.fit(
     x=x_train,
     y=y_train,
-    batch_size=32, 
-    epochs=3,
+    batch_size=16, 
+    epochs=2,
     verbose=1,
-    validation_data=(x_val, y_val)
+    validation_data=(x_val, y_val),
+    callbacks=[early_stopping]
 )
 
 # Save the retrained model

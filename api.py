@@ -26,6 +26,7 @@ def load_data():
     books = pd.read_csv("books_data_clean_with_id.csv")
     ratings_df  = pd.read_csv("books_rating_clean_with_book_id.csv")
     final_ratings = pd.read_csv("final_ratings.csv")
+    # pivot_table = pd.read_csv("PivotTable.csv")
     merged_df = pd.merge(ratings_df, books, left_on='book_id', right_on='id')
 
     persist_directory = "db"
@@ -273,7 +274,27 @@ async def add_rating(new_rating: NewRating, background_tasks: BackgroundTasks):
 def save_ratings_to_csv():
     ratings_df = app.state.data["ratings_df"]
     ratings_df.to_csv("books_rating_clean_with_book_id.csv", index=False)
-
+    # Reloading affected data
+    books = app.state.data["books"]
+    app.state.data["merged_df"] = pd.merge(ratings_df, books, left_on='book_id', right_on='id')
+    merged_df = app.state.data["merged_df"]
+    app.state.data['user_ids'] = merged_df["user_id"].unique().tolist()
+    user_ids = app.state.data["user_ids"]
+    app.state.data['user2user_encoded'] = {x: i for i, x in enumerate(user_ids)}
+    app.state.data['userencoded2user'] = {i: x for i, x in enumerate(user_ids)}
+    
+    app.state.data['book_ids'] = merged_df["book_id"].unique().tolist()
+    book_ids = app.state.data['book_ids']
+    app.state.data['book2book_encoded'] = {x: i for i, x in enumerate(book_ids)}
+    app.state.data['book_encoded2book'] = {i: x for i, x in enumerate(book_ids)}
+    
+    user2user_encoded = app.state.data['user2user_encoded']
+    book2book_encoded = app.state.data['book2book_encoded']
+    merged_df["user"] = merged_df["user_id"].map(user2user_encoded)
+    merged_df["book"] = merged_df["book_id"].map(book2book_encoded)
+    merged_df['rating'] = merged_df['review/score'].values.astype(np.float32)
+    app.state.data["merged_df"] = merged_df
+    
 # Endpoint for root
 @app.get("/")
 async def read_root():
