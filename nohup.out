@@ -1,594 +1,185 @@
-ERROR:    Error loading ASGI app. Could not import module "app".
-2024-06-17 15:24:44.028477: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+2024-06-17 23:32:30.853469: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
 To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2024-06-17 15:24:45.473269: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/regy/miniconda3/envs/tf/lib/
-2024-06-17 15:24:45.473457: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/regy/miniconda3/envs/tf/lib/
-2024-06-17 15:24:45.473481: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
-2024-06-17 15:24:46,452 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
-2024-06-17 15:24:46,452 - INFO - Added job "scheduled_task" to job store "default"
-2024-06-17 15:24:46,452 - INFO - Scheduler started
-INFO:     Started server process [17464]
+2024-06-17 23:32:33.720734: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/regy/miniconda3/envs/tf/lib/
+2024-06-17 23:32:33.721070: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/regy/miniconda3/envs/tf/lib/
+2024-06-17 23:32:33.721127: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2024-06-17 23:32:34,816 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 23:32:34,816 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 23:32:34,816 - INFO - Scheduler started
+INFO:     Started server process [5858]
 INFO:     Waiting for application startup.
 /home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/langchain_core/_api/deprecation.py:119: LangChainDeprecationWarning: The class `HuggingFaceEmbeddings` was deprecated in LangChain 0.2.2 and will be removed in 0.3.0. An updated version of the class exists in the langchain-huggingface package and should be used instead. To use it run `pip install -U langchain-huggingface` and import as `from langchain_huggingface import HuggingFaceEmbeddings`.
   warn_deprecated(
-2024-06-17 15:24:50,923 - INFO - Use pytorch device_name: cuda
-2024-06-17 15:24:50,924 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 23:32:44,885 - INFO - Use pytorch device_name: cuda
+2024-06-17 23:32:44,886 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
 /home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
   warnings.warn(
-2024-06-17 15:24:58,878 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
-2024-06-17 15:24:58,944 - INFO - Collection langchain is not created.
-2024-06-17 15:25:27.054581: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+2024-06-17 23:32:52,482 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 23:32:52,574 - INFO - Collection langchain is not created.
+2024-06-17 23:33:10.793890: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
 Your kernel may have been built without NUMA support.
-2024-06-17 15:25:27.432851: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+2024-06-17 23:33:10.868714: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
 Your kernel may have been built without NUMA support.
-2024-06-17 15:25:27.432976: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+2024-06-17 23:33:10.868865: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
 Your kernel may have been built without NUMA support.
-2024-06-17 15:25:27.448627: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+2024-06-17 23:33:10.871648: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
 To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2024-06-17 15:25:27.452947: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+2024-06-17 23:33:10.877425: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
 Your kernel may have been built without NUMA support.
-2024-06-17 15:25:27.453073: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+2024-06-17 23:33:10.877613: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
 Your kernel may have been built without NUMA support.
-2024-06-17 15:25:27.453176: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+2024-06-17 23:33:10.877799: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
 Your kernel may have been built without NUMA support.
-2024-06-17 15:25:27.565745: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+2024-06-17 23:33:10.901459: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
 Your kernel may have been built without NUMA support.
-2024-06-17 15:25:27.566500: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+2024-06-17 23:33:10.901976: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
 Your kernel may have been built without NUMA support.
-2024-06-17 15:25:27.566584: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Could not identify NUMA node of platform GPU id 0, defaulting to 0.  Your kernel may not have been built with NUMA support.
-2024-06-17 15:25:27.566692: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+2024-06-17 23:33:10.902064: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Could not identify NUMA node of platform GPU id 0, defaulting to 0.  Your kernel may not have been built with NUMA support.
+2024-06-17 23:33:10.902231: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
 Your kernel may have been built without NUMA support.
-2024-06-17 15:25:27.566770: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1613] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 1663 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3050 Laptop GPU, pci bus id: 0000:01:00.0, compute capability: 8.6
+2024-06-17 23:33:10.902521: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1613] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 1663 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3050 Laptop GPU, pci bus id: 0000:01:00.0, compute capability: 8.6
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:52474 - "POST /add_rating/ HTTP/1.1" 200 OK
+2024-06-17 23:34:21.671493: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-06-17 23:34:22.900361: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/regy/miniconda3/envs/tf/lib/
+2024-06-17 23:34:22.900539: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/regy/miniconda3/envs/tf/lib/
+2024-06-17 23:34:22.900561: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2024-06-17 23:34:26.290187: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2024-06-17 23:34:26.306955: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2024-06-17 23:34:26.307094: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2024-06-17 23:34:26.307445: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-06-17 23:34:26.310217: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2024-06-17 23:34:26.310407: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2024-06-17 23:34:26.310505: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2024-06-17 23:34:26.514924: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2024-06-17 23:34:26.515160: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2024-06-17 23:34:26.515229: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Could not identify NUMA node of platform GPU id 0, defaulting to 0.  Your kernel may not have been built with NUMA support.
+2024-06-17 23:34:26.515312: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2024-06-17 23:34:26.515394: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1613] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 1767 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3050 Laptop GPU, pci bus id: 0000:01:00.0, compute capability: 8.6
+2024-06-17 23:34:29.178629: I tensorflow/compiler/xla/service/service.cc:173] XLA service 0x7fd269a55cd0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2024-06-17 23:34:29.178893: I tensorflow/compiler/xla/service/service.cc:181]   StreamExecutor device (0): NVIDIA GeForce RTX 3050 Laptop GPU, Compute Capability 8.6
+2024-06-17 23:34:29.202852: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:268] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2024-06-17 23:34:29.538632: I tensorflow/compiler/jit/xla_compilation_cache.cc:477] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+2024-06-17 23:34:29.924911: I tensorflow/compiler/xla/stream_executor/cuda/cuda_blas.cc:630] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+WARNING:absl:Found untraced functions such as _update_step_xla while saving (showing 1 of 1). These functions will not be directly callable after loading.
+Number of users: 138940, Number of books: 9909, Min Rating: 0.0, Max Rating: 5.0
+Load the previously saved model
+Train a new model
+  1/310 [..............................] - ETA: 44s 13/310 [>.............................] - ETA: 1s  24/310 [=>............................] - ETA: 1s 34/310 [==>...........................] - ETA: 1s 44/310 [===>..........................] - ETA: 1s 54/310 [====>.........................] - ETA: 1s 64/310 [=====>........................] - ETA: 1s 76/310 [======>.......................] - ETA: 1s 88/310 [=======>......................] - ETA: 1s100/310 [========>.....................] - ETA: 1s112/310 [=========>....................] - ETA: 0s124/310 [===========>..................] - ETA: 0s136/310 [============>.................] - ETA: 0s148/310 [=============>................] - ETA: 0s159/310 [==============>...............] - ETA: 0s171/310 [===============>..............] - ETA: 0s182/310 [================>.............] - ETA: 0s194/310 [=================>............] - ETA: 0s207/310 [===================>..........] - ETA: 0s219/310 [====================>.........] - ETA: 0s231/310 [=====================>........] - ETA: 0s242/310 [======================>.......] - ETA: 0s254/310 [=======================>......] - ETA: 0s266/310 [========================>.....] - ETA: 0s278/310 [=========================>....] - ETA: 0s289/310 [==========================>...] - ETA: 0s301/310 [============================>.] - ETA: 0s310/310 [==============================] - 2s 5ms/step
+INFO:     127.0.0.1:52490 - "POST /colabUser/?user_id=ygbenerrraaaaaa&amount=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58934 - "POST /add_rating/ HTTP/1.1" 200 OK
+2024-06-17 23:36:00.877577: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-06-17 23:36:01.689968: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/regy/miniconda3/envs/tf/lib/
+2024-06-17 23:36:01.690120: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/regy/miniconda3/envs/tf/lib/
+2024-06-17 23:36:01.690177: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2024-06-17 23:36:04.601237: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2024-06-17 23:36:04.631748: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2024-06-17 23:36:04.631884: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2024-06-17 23:36:04.632271: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-06-17 23:36:04.633597: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2024-06-17 23:36:04.633699: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2024-06-17 23:36:04.633863: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2024-06-17 23:36:04.775081: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2024-06-17 23:36:04.775251: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2024-06-17 23:36:04.775310: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Could not identify NUMA node of platform GPU id 0, defaulting to 0.  Your kernel may not have been built with NUMA support.
+2024-06-17 23:36:04.775394: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2024-06-17 23:36:04.775517: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1613] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 1767 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3050 Laptop GPU, pci bus id: 0000:01:00.0, compute capability: 8.6
+2024-06-17 23:36:06.554775: I tensorflow/compiler/xla/service/service.cc:173] XLA service 0x46afe70 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2024-06-17 23:36:06.554906: I tensorflow/compiler/xla/service/service.cc:181]   StreamExecutor device (0): NVIDIA GeForce RTX 3050 Laptop GPU, Compute Capability 8.6
+2024-06-17 23:36:06.560398: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:268] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2024-06-17 23:36:06.637340: I tensorflow/compiler/jit/xla_compilation_cache.cc:477] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+2024-06-17 23:36:06.887385: I tensorflow/compiler/xla/stream_executor/cuda/cuda_blas.cc:630] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+WARNING:absl:Found untraced functions such as _update_step_xla while saving (showing 1 of 1). These functions will not be directly callable after loading.
+Number of users: 138941, Number of books: 9909, Min Rating: 0.0, Max Rating: 5.0
+Load the previously saved model
+Train a new model
 INFO:     Shutting down
 INFO:     Waiting for application shutdown.
-2024-06-17 15:30:21,627 - INFO - Scheduler has been shut down
+2024-06-17 23:37:32,571 - INFO - Scheduler has been shut down
 INFO:     Application shutdown complete.
-INFO:     Finished server process [17464]
-2024-06-17 15:30:24.020698: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+INFO:     Finished server process [5858]
+2024-06-17 23:37:34.252294: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
 To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2024-06-17 15:30:25.780225: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/regy/miniconda3/envs/tf/lib/
-2024-06-17 15:30:25.780456: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/regy/miniconda3/envs/tf/lib/
-2024-06-17 15:30:25.780498: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
-2024-06-17 15:30:27,028 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
-2024-06-17 15:30:27,029 - INFO - Added job "scheduled_task" to job store "default"
-2024-06-17 15:30:27,029 - INFO - Scheduler started
-INFO:     Started server process [18423]
+2024-06-17 23:37:35.083293: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/regy/miniconda3/envs/tf/lib/
+2024-06-17 23:37:35.083438: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/regy/miniconda3/envs/tf/lib/
+2024-06-17 23:37:35.083461: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2024-06-17 23:37:35,643 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 23:37:35,643 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 23:37:35,643 - INFO - Scheduler started
+INFO:     Started server process [6723]
 INFO:     Waiting for application startup.
 /home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/langchain_core/_api/deprecation.py:119: LangChainDeprecationWarning: The class `HuggingFaceEmbeddings` was deprecated in LangChain 0.2.2 and will be removed in 0.3.0. An updated version of the class exists in the langchain-huggingface package and should be used instead. To use it run `pip install -U langchain-huggingface` and import as `from langchain_huggingface import HuggingFaceEmbeddings`.
   warn_deprecated(
-2024-06-17 15:30:32,544 - INFO - Use pytorch device_name: cuda
-2024-06-17 15:30:32,544 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 23:37:41,072 - INFO - Use pytorch device_name: cuda
+2024-06-17 23:37:41,072 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
 /home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
   warnings.warn(
-2024-06-17 15:30:39,313 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
-2024-06-17 15:30:39,433 - INFO - Collection langchain is not created.
-2024-06-17 15:31:04.809538: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+2024-06-17 23:37:47,607 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 23:37:47,704 - INFO - Collection langchain is not created.
+2024-06-17 23:38:07.113461: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
 Your kernel may have been built without NUMA support.
-2024-06-17 15:31:05.070809: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+2024-06-17 23:38:07.136630: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
 Your kernel may have been built without NUMA support.
-2024-06-17 15:31:05.070931: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+2024-06-17 23:38:07.136807: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
 Your kernel may have been built without NUMA support.
-2024-06-17 15:31:05.079516: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+2024-06-17 23:38:07.137369: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
 To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2024-06-17 15:31:05.082085: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+2024-06-17 23:38:07.139615: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
 Your kernel may have been built without NUMA support.
-2024-06-17 15:31:05.082194: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+2024-06-17 23:38:07.139772: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
 Your kernel may have been built without NUMA support.
-2024-06-17 15:31:05.082283: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+2024-06-17 23:38:07.139866: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
 Your kernel may have been built without NUMA support.
-2024-06-17 15:31:05.137309: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+2024-06-17 23:38:07.144213: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
 Your kernel may have been built without NUMA support.
-2024-06-17 15:31:05.138108: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+2024-06-17 23:38:07.144406: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
 Your kernel may have been built without NUMA support.
-2024-06-17 15:31:05.138205: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Could not identify NUMA node of platform GPU id 0, defaulting to 0.  Your kernel may not have been built with NUMA support.
-2024-06-17 15:31:05.138343: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
+2024-06-17 23:38:07.144490: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Could not identify NUMA node of platform GPU id 0, defaulting to 0.  Your kernel may not have been built with NUMA support.
+2024-06-17 23:38:07.144619: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
 Your kernel may have been built without NUMA support.
-2024-06-17 15:31:05.138964: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1613] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 1663 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3050 Laptop GPU, pci bus id: 0000:01:00.0, compute capability: 8.6
+2024-06-17 23:38:07.144722: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1613] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 1663 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3050 Laptop GPU, pci bus id: 0000:01:00.0, compute capability: 8.6
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-INFO:     127.0.0.1:43808 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43816 - "GET /docs HTTP/1.1" 200 OK
-INFO:     127.0.0.1:43816 - "GET /openapi.json HTTP/1.1" 200 OK
-INFO:     127.0.0.1:37454 - "POST /recommendation/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:38660 - "POST /colabBook/?id_book=15&amount=100 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52086 - "POST /add_rating/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52092 - "POST /colabUser/?user_id=bisalaatolong&amount=100 HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:41814 - "POST /colabUser/?user_id=bisalaatolong&amount=100 HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:41814 - "POST /colabUser/?user_id=bisalaatolong&amount=100 HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:46518 - "POST /colabUser/?user_id=bisalaatolong&amount=100 HTTP/1.1" 404 Not Found
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-INFO:     127.0.0.1:42882 - "POST /restart-api/ HTTP/1.1" 200 OK
-/bin/bash: /home/regy/miniconda3/envs/tf/lib/libtinfo.so.6: no version information available (required by /bin/bash)
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-2024-06-17 15:38:40,494 - INFO - Scheduler has been shut down
-INFO:     Application shutdown complete.
-INFO:     Finished server process [18423]
-2024-06-17 15:38:42.990468: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
-To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2024-06-17 15:38:44.617461: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/regy/miniconda3/envs/tf/lib/
-2024-06-17 15:38:44.618147: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/regy/miniconda3/envs/tf/lib/
-2024-06-17 15:38:44.618195: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
-2024-06-17 15:38:45,875 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
-2024-06-17 15:38:45,875 - INFO - Added job "scheduled_task" to job store "default"
-2024-06-17 15:38:45,875 - INFO - Scheduler started
-INFO:     Started server process [19304]
-INFO:     Waiting for application startup.
-/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/langchain_core/_api/deprecation.py:119: LangChainDeprecationWarning: The class `HuggingFaceEmbeddings` was deprecated in LangChain 0.2.2 and will be removed in 0.3.0. An updated version of the class exists in the langchain-huggingface package and should be used instead. To use it run `pip install -U langchain-huggingface` and import as `from langchain_huggingface import HuggingFaceEmbeddings`.
-  warn_deprecated(
-2024-06-17 15:38:50,501 - INFO - Use pytorch device_name: cuda
-2024-06-17 15:38:50,501 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
-/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
-  warnings.warn(
-2024-06-17 15:38:56,564 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
-2024-06-17 15:38:56,664 - INFO - Collection langchain is not created.
-2024-06-17 15:39:23.695359: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 15:39:23.932797: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 15:39:23.932956: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 15:39:23.951741: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
-To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2024-06-17 15:39:23.956084: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 15:39:23.956252: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 15:39:23.956335: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 15:39:24.081227: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 15:39:24.082123: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 15:39:24.082211: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Could not identify NUMA node of platform GPU id 0, defaulting to 0.  Your kernel may not have been built with NUMA support.
-2024-06-17 15:39:24.082346: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 15:39:24.082465: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1613] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 1663 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3050 Laptop GPU, pci bus id: 0000:01:00.0, compute capability: 8.6
-INFO:     Application startup complete.
-INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-INFO:     127.0.0.1:52964 - "GET /docs HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52964 - "GET /openapi.json HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52978 - "POST /add_rating/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:34690 - "POST /colabUser/?user_id=untukterakhirpls&amount=100 HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:48748 - "POST /colabUser/?user_id=untukterakhirpls&amount=100 HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:48748 - "POST /colabUser/?user_id=untukterakhirpls&amount=100 HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:52390 - "POST /restart-api/ HTTP/1.1" 200 OK
-/bin/bash: /home/regy/miniconda3/envs/tf/lib/libtinfo.so.6: no version information available (required by /bin/bash)
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-2024-06-17 15:43:13,718 - INFO - Scheduler has been shut down
-INFO:     Application shutdown complete.
-INFO:     Finished server process [19304]
-2024-06-17 15:43:16.261326: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
-To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2024-06-17 15:43:17.818132: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/regy/miniconda3/envs/tf/lib/
-2024-06-17 15:43:17.818309: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/regy/miniconda3/envs/tf/lib/
-2024-06-17 15:43:17.818327: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
-2024-06-17 15:43:19,040 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
-2024-06-17 15:43:19,040 - INFO - Added job "scheduled_task" to job store "default"
-2024-06-17 15:43:19,041 - INFO - Scheduler started
-INFO:     Started server process [19801]
-INFO:     Waiting for application startup.
-/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/langchain_core/_api/deprecation.py:119: LangChainDeprecationWarning: The class `HuggingFaceEmbeddings` was deprecated in LangChain 0.2.2 and will be removed in 0.3.0. An updated version of the class exists in the langchain-huggingface package and should be used instead. To use it run `pip install -U langchain-huggingface` and import as `from langchain_huggingface import HuggingFaceEmbeddings`.
-  warn_deprecated(
-2024-06-17 15:43:24,002 - INFO - Use pytorch device_name: cuda
-2024-06-17 15:43:24,002 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
-/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
-  warnings.warn(
-2024-06-17 15:43:33,963 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
-2024-06-17 15:43:34,101 - INFO - Collection langchain is not created.
-2024-06-17 15:43:59.627569: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 15:43:59.844481: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 15:43:59.844603: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 15:43:59.860182: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
-To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2024-06-17 15:43:59.863501: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 15:43:59.863608: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 15:43:59.863697: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 15:43:59.979471: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 15:43:59.980202: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 15:43:59.980280: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Could not identify NUMA node of platform GPU id 0, defaulting to 0.  Your kernel may not have been built with NUMA support.
-2024-06-17 15:43:59.980399: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 15:43:59.980469: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1613] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 1663 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3050 Laptop GPU, pci bus id: 0000:01:00.0, compute capability: 8.6
-INFO:     Application startup complete.
-INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-INFO:     127.0.0.1:54658 - "POST /add_rating/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54674 - "POST /colabUser/?user_id=plisla&amount=100 HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:41208 - "POST /restart-api/ HTTP/1.1" 200 OK
-/bin/bash: /home/regy/miniconda3/envs/tf/lib/libtinfo.so.6: no version information available (required by /bin/bash)
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-2024-06-17 15:46:02,638 - INFO - Scheduler has been shut down
-INFO:     Application shutdown complete.
-INFO:     Finished server process [19801]
-2024-06-17 15:46:04.989578: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
-To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2024-06-17 15:46:06.475295: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/regy/miniconda3/envs/tf/lib/
-2024-06-17 15:46:06.475716: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/regy/miniconda3/envs/tf/lib/
-2024-06-17 15:46:06.475829: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
-2024-06-17 15:46:07,621 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
-2024-06-17 15:46:07,621 - INFO - Added job "scheduled_task" to job store "default"
-2024-06-17 15:46:07,621 - INFO - Scheduler started
-Traceback (most recent call last):
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/datastructures.py", line 699, in __getattr__
-    return self._state[key]
-KeyError: 'data'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/regy/miniconda3/envs/tf/bin/uvicorn", line 8, in <module>
-    sys.exit(main())
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/click/core.py", line 1157, in __call__
-    return self.main(*args, **kwargs)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/click/core.py", line 1078, in main
-    rv = self.invoke(ctx)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/click/core.py", line 1434, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/click/core.py", line 783, in invoke
-    return __callback(*args, **kwargs)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/uvicorn/main.py", line 410, in main
-    run(
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/uvicorn/main.py", line 577, in run
-    server.run()
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/uvicorn/server.py", line 65, in run
-    return asyncio.run(self.serve(sockets=sockets))
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/asyncio/runners.py", line 44, in run
-    return loop.run_until_complete(main)
-  File "uvloop/loop.pyx", line 1517, in uvloop.loop.Loop.run_until_complete
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/uvicorn/server.py", line 69, in serve
-    await self._serve(sockets)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/uvicorn/server.py", line 76, in _serve
-    config.load()
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/uvicorn/config.py", line 434, in load
-    self.loaded_app = import_from_string(self.app)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/uvicorn/importer.py", line 19, in import_from_string
-    module = importlib.import_module(module_str)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/importlib/__init__.py", line 127, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
-  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-  File "/home/regy/notebooks/Amazon Book dataset/api.py", line 231, in <module>
-    async def recommend_for_user(user_id: str = Query(...), amount: int = Query(...), data: dict = getColabUserData()):
-  File "/home/regy/notebooks/Amazon Book dataset/api.py", line 213, in getColabUserData
-    books = app.state.data["books"]
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/datastructures.py", line 702, in __getattr__
-    raise AttributeError(message.format(self.__class__.__name__, key))
-AttributeError: 'State' object has no attribute 'data'
-2024-06-17 15:48:22.284973: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
-To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2024-06-17 15:48:22.919704: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/regy/miniconda3/envs/tf/lib/
-2024-06-17 15:48:22.919845: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/regy/miniconda3/envs/tf/lib/
-2024-06-17 15:48:22.919864: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
-2024-06-17 15:48:23,407 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
-2024-06-17 15:48:23,407 - INFO - Added job "scheduled_task" to job store "default"
-2024-06-17 15:48:23,408 - INFO - Scheduler started
-Traceback (most recent call last):
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/datastructures.py", line 699, in __getattr__
-    return self._state[key]
-KeyError: 'data'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/regy/miniconda3/envs/tf/bin/uvicorn", line 8, in <module>
-    sys.exit(main())
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/click/core.py", line 1157, in __call__
-    return self.main(*args, **kwargs)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/click/core.py", line 1078, in main
-    rv = self.invoke(ctx)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/click/core.py", line 1434, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/click/core.py", line 783, in invoke
-    return __callback(*args, **kwargs)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/uvicorn/main.py", line 410, in main
-    run(
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/uvicorn/main.py", line 577, in run
-    server.run()
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/uvicorn/server.py", line 65, in run
-    return asyncio.run(self.serve(sockets=sockets))
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/asyncio/runners.py", line 44, in run
-    return loop.run_until_complete(main)
-  File "uvloop/loop.pyx", line 1517, in uvloop.loop.Loop.run_until_complete
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/uvicorn/server.py", line 69, in serve
-    await self._serve(sockets)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/uvicorn/server.py", line 76, in _serve
-    config.load()
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/uvicorn/config.py", line 434, in load
-    self.loaded_app = import_from_string(self.app)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/uvicorn/importer.py", line 19, in import_from_string
-    module = importlib.import_module(module_str)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/importlib/__init__.py", line 127, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
-  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-  File "/home/regy/notebooks/Amazon Book dataset/api.py", line 231, in <module>
-    async def recommend_for_user(user_id: str = Query(...), amount: int = Query(...), data: dict = getColabUserData()):
-  File "/home/regy/notebooks/Amazon Book dataset/api.py", line 213, in getColabUserData
-    books = app.state.data["books"]
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/datastructures.py", line 702, in __getattr__
-    raise AttributeError(message.format(self.__class__.__name__, key))
-AttributeError: 'State' object has no attribute 'data'
-2024-06-17 15:53:33.682739: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
-To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2024-06-17 15:53:34.474309: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/regy/miniconda3/envs/tf/lib/
-2024-06-17 15:53:34.474541: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/regy/miniconda3/envs/tf/lib/
-2024-06-17 15:53:34.474609: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
-2024-06-17 15:53:35,076 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
-2024-06-17 15:53:35,076 - INFO - Added job "scheduled_task" to job store "default"
-2024-06-17 15:53:35,076 - INFO - Scheduler started
-INFO:     Started server process [20891]
-INFO:     Waiting for application startup.
-/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/langchain_core/_api/deprecation.py:119: LangChainDeprecationWarning: The class `HuggingFaceEmbeddings` was deprecated in LangChain 0.2.2 and will be removed in 0.3.0. An updated version of the class exists in the langchain-huggingface package and should be used instead. To use it run `pip install -U langchain-huggingface` and import as `from langchain_huggingface import HuggingFaceEmbeddings`.
-  warn_deprecated(
-2024-06-17 15:53:39,837 - INFO - Use pytorch device_name: cuda
-2024-06-17 15:53:39,837 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
-/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
-  warnings.warn(
-2024-06-17 15:53:46,982 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
-2024-06-17 15:53:47,058 - INFO - Collection langchain is not created.
-2024-06-17 15:54:14.053553: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 15:54:14.283181: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 15:54:14.283350: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 15:54:14.300388: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
-To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2024-06-17 15:54:14.305466: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 15:54:14.305720: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 15:54:14.305808: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 15:54:14.416176: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 15:54:14.417026: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 15:54:14.417098: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Could not identify NUMA node of platform GPU id 0, defaulting to 0.  Your kernel may not have been built with NUMA support.
-2024-06-17 15:54:14.417212: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 15:54:14.417329: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1613] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 1663 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3050 Laptop GPU, pci bus id: 0000:01:00.0, compute capability: 8.6
-INFO:     Application startup complete.
-INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-INFO:     127.0.0.1:39588 - "GET /docs HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39588 - "GET /openapi.json HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39598 - "POST /colabUser/?user_id=plisla&amount=100 HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:46364 - "POST /colabUser/?user_id=plisla&amount=100 HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:46370 - "POST /add_rating/ HTTP/1.1" 200 OK
-  1/310 [..............................] - ETA: 5:58  9/310 [..............................] - ETA: 2s   17/310 [>.............................] - ETA: 1s 26/310 [=>............................] - ETA: 1s 35/310 [==>...........................] - ETA: 1s 44/310 [===>..........................] - ETA: 1s 53/310 [====>.........................] - ETA: 1s 63/310 [=====>........................] - ETA: 1s 71/310 [=====>........................] - ETA: 1s 81/310 [======>.......................] - ETA: 1s 90/310 [=======>......................] - ETA: 1s104/310 [=========>....................] - ETA: 1s114/310 [==========>...................] - ETA: 1s130/310 [===========>..................] - ETA: 0s144/310 [============>.................] - ETA: 0s161/310 [==============>...............] - ETA: 0s176/310 [================>.............] - ETA: 0s193/310 [=================>............] - ETA: 0s207/310 [===================>..........] - ETA: 0s224/310 [====================>.........] - ETA: 0s239/310 [======================>.......] - ETA: 0s256/310 [=======================>......] - ETA: 0s270/310 [=========================>....] - ETA: 0s288/310 [==========================>...] - ETA: 0s302/310 [============================>.] - ETA: 0s310/310 [==============================] - 2s 4ms/step
-INFO:     127.0.0.1:59258 - "POST /colabUser/?user_id=terakhirpls&amount=100 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59268 - "POST /colabBook/?id_book=15&amount=100 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:32912 - "POST /recommendation/ HTTP/1.1" 200 OK
-INFO:     127.0.0.1:32912 - "POST /recommendation/ HTTP/1.1" 200 OK
-  1/310 [..............................] - ETA: 6s  9/310 [..............................] - ETA: 1s 16/310 [>.............................] - ETA: 2s 23/310 [=>............................] - ETA: 2s 29/310 [=>............................] - ETA: 2s 37/310 [==>...........................] - ETA: 2s 42/310 [===>..........................] - ETA: 2s 48/310 [===>..........................] - ETA: 2s 56/310 [====>.........................] - ETA: 2s 69/310 [=====>........................] - ETA: 1s 80/310 [======>.......................] - ETA: 1s 94/310 [========>.....................] - ETA: 1s107/310 [=========>....................] - ETA: 1s121/310 [==========>...................] - ETA: 1s134/310 [===========>..................] - ETA: 0s148/310 [=============>................] - ETA: 0s162/310 [==============>...............] - ETA: 0s178/310 [================>.............] - ETA: 0s192/310 [=================>............] - ETA: 0s208/310 [===================>..........] - ETA: 0s223/310 [====================>.........] - ETA: 0s240/310 [======================>.......] - ETA: 0s255/310 [=======================>......] - ETA: 0s271/310 [=========================>....] - ETA: 0s286/310 [==========================>...] - ETA: 0s300/310 [============================>.] - ETA: 0s310/310 [==============================] - 1s 4ms/step
-INFO:     127.0.0.1:32924 - "POST /colabUser/?user_id=terakhirpls&amount=100 HTTP/1.1" 200 OK
-  1/310 [..............................] - ETA: 5s 10/310 [..............................] - ETA: 1s 17/310 [>.............................] - ETA: 1s 25/310 [=>............................] - ETA: 1s 31/310 [==>...........................] - ETA: 1s 38/310 [==>...........................] - ETA: 1s 46/310 [===>..........................] - ETA: 1s 54/310 [====>.........................] - ETA: 1s 61/310 [====>.........................] - ETA: 1s 72/310 [=====>........................] - ETA: 1s 83/310 [=======>......................] - ETA: 1s 99/310 [========>.....................] - ETA: 1s113/310 [=========>....................] - ETA: 1s129/310 [===========>..................] - ETA: 0s143/310 [============>.................] - ETA: 0s160/310 [==============>...............] - ETA: 0s175/310 [===============>..............] - ETA: 0s192/310 [=================>............] - ETA: 0s206/310 [==================>...........] - ETA: 0s223/310 [====================>.........] - ETA: 0s238/310 [======================>.......] - ETA: 0s253/310 [=======================>......] - ETA: 0s267/310 [========================>.....] - ETA: 0s282/310 [==========================>...] - ETA: 0s296/310 [===========================>..] - ETA: 0s310/310 [==============================] - 1s 4ms/step
-INFO:     127.0.0.1:32924 - "POST /colabUser/?user_id=terakhirpls&amount=100 HTTP/1.1" 200 OK
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-2024-06-17 16:01:17,421 - INFO - Scheduler has been shut down
-INFO:     Application shutdown complete.
-INFO:     Finished server process [20891]
-2024-06-17 16:01:19.805242: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
-To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2024-06-17 16:01:21.382266: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/regy/miniconda3/envs/tf/lib/
-2024-06-17 16:01:21.382560: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/regy/miniconda3/envs/tf/lib/
-2024-06-17 16:01:21.382610: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
-2024-06-17 16:01:22,612 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
-2024-06-17 16:01:22,613 - INFO - Added job "scheduled_task" to job store "default"
-2024-06-17 16:01:22,613 - INFO - Scheduler started
-INFO:     Started server process [21800]
-INFO:     Waiting for application startup.
-/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/langchain_core/_api/deprecation.py:119: LangChainDeprecationWarning: The class `HuggingFaceEmbeddings` was deprecated in LangChain 0.2.2 and will be removed in 0.3.0. An updated version of the class exists in the langchain-huggingface package and should be used instead. To use it run `pip install -U langchain-huggingface` and import as `from langchain_huggingface import HuggingFaceEmbeddings`.
-  warn_deprecated(
-2024-06-17 16:01:27,434 - INFO - Use pytorch device_name: cuda
-2024-06-17 16:01:27,434 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
-/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
-  warnings.warn(
-2024-06-17 16:01:35,160 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
-2024-06-17 16:01:35,238 - INFO - Collection langchain is not created.
-2024-06-17 16:02:02.315125: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 16:02:02.528851: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 16:02:02.528983: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 16:02:02.548757: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
-To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2024-06-17 16:02:02.552292: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 16:02:02.552445: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 16:02:02.552596: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 16:02:02.661471: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 16:02:02.662243: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 16:02:02.662287: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Could not identify NUMA node of platform GPU id 0, defaulting to 0.  Your kernel may not have been built with NUMA support.
-2024-06-17 16:02:02.662360: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 16:02:02.662928: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1613] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 1663 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3050 Laptop GPU, pci bus id: 0000:01:00.0, compute capability: 8.6
-INFO:     Application startup complete.
-INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-INFO:     127.0.0.1:46962 - "POST /add_rating/ HTTP/1.1" 200 OK
-ERROR:    Exception in ASGI application
-Traceback (most recent call last):
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/uvicorn/protocols/http/httptools_impl.py", line 399, in run_asgi
-    result = await app(  # type: ignore[func-returns-value]
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 70, in __call__
-    return await self.app(scope, receive, send)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/fastapi/applications.py", line 1054, in __call__
-    await super().__call__(scope, receive, send)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/applications.py", line 123, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/middleware/errors.py", line 186, in __call__
-    raise exc
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/middleware/errors.py", line 164, in __call__
-    await self.app(scope, receive, _send)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
-    raise exc
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    await app(scope, receive, sender)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/routing.py", line 756, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/routing.py", line 776, in app
-    await route.handle(scope, receive, send)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/routing.py", line 297, in handle
-    await self.app(scope, receive, send)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/routing.py", line 77, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
-    raise exc
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    await app(scope, receive, sender)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/routing.py", line 75, in app
-    await response(scope, receive, send)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/responses.py", line 162, in __call__
-    await self.background()
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/background.py", line 45, in __call__
-    await task()
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/background.py", line 30, in __call__
-    await run_in_threadpool(self.func, *self.args, **self.kwargs)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/concurrency.py", line 42, in run_in_threadpool
-    return await anyio.to_thread.run_sync(func, *args)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/anyio/to_thread.py", line 56, in run_sync
-    return await get_async_backend().run_sync_in_worker_thread(
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 2177, in run_sync_in_worker_thread
-    return await future
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 859, in run
-    result = context.run(func, *args)
-TypeError: 'NoneType' object is not callable
-INFO:     127.0.0.1:46964 - "GET /docs HTTP/1.1" 200 OK
-INFO:     127.0.0.1:46964 - "GET /openapi.json HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39596 - "POST /add_rating/ HTTP/1.1" 200 OK
-ERROR:    Exception in ASGI application
-Traceback (most recent call last):
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/uvicorn/protocols/http/httptools_impl.py", line 399, in run_asgi
-    result = await app(  # type: ignore[func-returns-value]
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 70, in __call__
-    return await self.app(scope, receive, send)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/fastapi/applications.py", line 1054, in __call__
-    await super().__call__(scope, receive, send)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/applications.py", line 123, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/middleware/errors.py", line 186, in __call__
-    raise exc
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/middleware/errors.py", line 164, in __call__
-    await self.app(scope, receive, _send)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
-    raise exc
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    await app(scope, receive, sender)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/routing.py", line 756, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/routing.py", line 776, in app
-    await route.handle(scope, receive, send)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/routing.py", line 297, in handle
-    await self.app(scope, receive, send)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/routing.py", line 77, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
-    raise exc
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    await app(scope, receive, sender)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/routing.py", line 75, in app
-    await response(scope, receive, send)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/responses.py", line 162, in __call__
-    await self.background()
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/background.py", line 45, in __call__
-    await task()
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/background.py", line 30, in __call__
-    await run_in_threadpool(self.func, *self.args, **self.kwargs)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/starlette/concurrency.py", line 42, in run_in_threadpool
-    return await anyio.to_thread.run_sync(func, *args)
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/anyio/to_thread.py", line 56, in run_sync
-    return await get_async_backend().run_sync_in_worker_thread(
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 2177, in run_sync_in_worker_thread
-    return await future
-  File "/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 859, in run
-    result = context.run(func, *args)
-TypeError: 'NoneType' object is not callable
-INFO:     127.0.0.1:39610 - "GET /docs HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39610 - "GET /openapi.json HTTP/1.1" 200 OK
-/bin/bash: /home/regy/miniconda3/envs/tf/lib/libtinfo.so.6: no version information available (required by /bin/bash)
-INFO:     127.0.0.1:41760 - "POST /restart-api/ HTTP/1.1" 200 OK
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-2024-06-17 16:04:24,653 - INFO - Scheduler has been shut down
-INFO:     Application shutdown complete.
-INFO:     Finished server process [21800]
-2024-06-17 16:04:26.894970: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
-To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2024-06-17 16:04:28.284852: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/regy/miniconda3/envs/tf/lib/
-2024-06-17 16:04:28.285006: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/home/regy/miniconda3/envs/tf/lib/
-2024-06-17 16:04:28.285030: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
-2024-06-17 16:04:29,481 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
-2024-06-17 16:04:29,481 - INFO - Added job "scheduled_task" to job store "default"
-2024-06-17 16:04:29,481 - INFO - Scheduler started
-INFO:     Started server process [22210]
-INFO:     Waiting for application startup.
-/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/langchain_core/_api/deprecation.py:119: LangChainDeprecationWarning: The class `HuggingFaceEmbeddings` was deprecated in LangChain 0.2.2 and will be removed in 0.3.0. An updated version of the class exists in the langchain-huggingface package and should be used instead. To use it run `pip install -U langchain-huggingface` and import as `from langchain_huggingface import HuggingFaceEmbeddings`.
-  warn_deprecated(
-2024-06-17 16:04:33,988 - INFO - Use pytorch device_name: cuda
-2024-06-17 16:04:33,989 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
-/home/regy/miniconda3/envs/tf/lib/python3.9/site-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
-  warnings.warn(
-2024-06-17 16:04:40,845 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
-2024-06-17 16:04:40,952 - INFO - Collection langchain is not created.
-2024-06-17 16:05:07.475998: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 16:05:07.693700: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 16:05:07.693834: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 16:05:07.710333: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
-To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2024-06-17 16:05:07.714014: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 16:05:07.714176: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 16:05:07.714329: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 16:05:07.831720: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 16:05:07.832458: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 16:05:07.832511: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Could not identify NUMA node of platform GPU id 0, defaulting to 0.  Your kernel may not have been built with NUMA support.
-2024-06-17 16:05:07.832586: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:967] could not open file to read NUMA node: /sys/bus/pci/devices/0000:01:00.0/numa_node
-Your kernel may have been built without NUMA support.
-2024-06-17 16:05:07.833020: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1613] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 1663 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3050 Laptop GPU, pci bus id: 0000:01:00.0, compute capability: 8.6
-INFO:     Application startup complete.
-INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-INFO:     127.0.0.1:58430 - "GET /docs HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58430 - "GET /openapi.json HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58440 - "POST /add_rating/ HTTP/1.1" 200 OK
-  1/310 [..............................] - ETA: 5:40  9/310 [..............................] - ETA: 2s   17/310 [>.............................] - ETA: 2s 25/310 [=>............................] - ETA: 1s 33/310 [==>...........................] - ETA: 1s 41/310 [==>...........................] - ETA: 1s 49/310 [===>..........................] - ETA: 1s 60/310 [====>.........................] - ETA: 1s 70/310 [=====>........................] - ETA: 1s 82/310 [======>.......................] - ETA: 1s 92/310 [=======>......................] - ETA: 1s104/310 [=========>....................] - ETA: 1s116/310 [==========>...................] - ETA: 1s128/310 [===========>..................] - ETA: 0s139/310 [============>.................] - ETA: 0s151/310 [=============>................] - ETA: 0s160/310 [==============>...............] - ETA: 0s170/310 [===============>..............] - ETA: 0s182/310 [================>.............] - ETA: 0s196/310 [=================>............] - ETA: 0s212/310 [===================>..........] - ETA: 0s229/310 [=====================>........] - ETA: 0s242/310 [======================>.......] - ETA: 0s256/310 [=======================>......] - ETA: 0s269/310 [=========================>....] - ETA: 0s283/310 [==========================>...] - ETA: 0s298/310 [===========================>..] - ETA: 0s310/310 [==============================] - 3s 5ms/step
-INFO:     127.0.0.1:45748 - "POST /colabUser/?user_id=testterakhir&amount=100 HTTP/1.1" 200 OK
+INFO:     180.241.46.35:0 - "GET / HTTP/1.1" 200 OK
+INFO:     103.168.190.2:0 - "GET / HTTP/1.1" 200 OK
+INFO:     103.168.190.2:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     103.168.190.2:0 - "GET /docs HTTP/1.1" 200 OK
+INFO:     103.168.190.2:0 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     180.241.46.35:0 - "GET /docs HTTP/1.1" 200 OK
+INFO:     180.241.46.35:0 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     125.166.117.182:0 - "GET / HTTP/1.1" 200 OK
+INFO:     125.166.117.182:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     180.241.46.35:0 - "POST /add_rating/ HTTP/1.1" 200 OK
+  1/310 [..............................] - ETA: 49s 10/310 [..............................] - ETA: 1s  18/310 [>.............................] - ETA: 1s 26/310 [=>............................] - ETA: 1s 34/310 [==>...........................] - ETA: 1s 42/310 [===>..........................] - ETA: 1s 52/310 [====>.........................] - ETA: 1s 64/310 [=====>........................] - ETA: 1s 75/310 [======>.......................] - ETA: 1s 85/310 [=======>......................] - ETA: 1s 97/310 [========>.....................] - ETA: 1s110/310 [=========>....................] - ETA: 1s122/310 [==========>...................] - ETA: 0s134/310 [===========>..................] - ETA: 0s145/310 [=============>................] - ETA: 0s156/310 [==============>...............] - ETA: 0s168/310 [===============>..............] - ETA: 0s180/310 [================>.............] - ETA: 0s192/310 [=================>............] - ETA: 0s205/310 [==================>...........] - ETA: 0s218/310 [====================>.........] - ETA: 0s232/310 [=====================>........] - ETA: 0s243/310 [======================>.......] - ETA: 0s255/310 [=======================>......] - ETA: 0s267/310 [========================>.....] - ETA: 0s280/310 [==========================>...] - ETA: 0s293/310 [===========================>..] - ETA: 0s306/310 [============================>.] - ETA: 0s310/310 [==============================] - 2s 5ms/step
+INFO:     180.241.46.35:0 - "POST /colabUser/?user_id=yahsudahla&amount=1000 HTTP/1.1" 200 OK
+INFO:     103.160.183.15:0 - "GET / HTTP/1.1" 200 OK
+INFO:     103.160.183.15:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     103.160.183.15:0 - "GET /docs HTTP/1.1" 200 OK
+INFO:     103.160.183.15:0 - "GET /openapi.json HTTP/1.1" 200 OK
+  1/310 [..............................] - ETA: 6s 15/310 [>.............................] - ETA: 1s 28/310 [=>............................] - ETA: 1s 42/310 [===>..........................] - ETA: 1s 55/310 [====>.........................] - ETA: 0s 66/310 [=====>........................] - ETA: 0s 78/310 [======>.......................] - ETA: 0s 89/310 [=======>......................] - ETA: 0s101/310 [========>.....................] - ETA: 0s115/310 [==========>...................] - ETA: 0s128/310 [===========>..................] - ETA: 0s139/310 [============>.................] - ETA: 0s150/310 [=============>................] - ETA: 0s162/310 [==============>...............] - ETA: 0s173/310 [===============>..............] - ETA: 0s185/310 [================>.............] - ETA: 0s197/310 [==================>...........] - ETA: 0s209/310 [===================>..........] - ETA: 0s221/310 [====================>.........] - ETA: 0s232/310 [=====================>........] - ETA: 0s246/310 [======================>.......] - ETA: 0s259/310 [========================>.....] - ETA: 0s273/310 [=========================>....] - ETA: 0s288/310 [==========================>...] - ETA: 0s304/310 [============================>.] - ETA: 0s310/310 [==============================] - 1s 4ms/step
+INFO:     103.160.183.15:0 - "POST /colabUser/?user_id=A3NDZCQ9D9T2XM&amount=10 HTTP/1.1" 200 OK
+  1/310 [..............................] - ETA: 8s  8/310 [..............................] - ETA: 2s 16/310 [>.............................] - ETA: 2s 23/310 [=>............................] - ETA: 2s 32/310 [==>...........................] - ETA: 1s 40/310 [==>...........................] - ETA: 1s 48/310 [===>..........................] - ETA: 1s 55/310 [====>.........................] - ETA: 1s 63/310 [=====>........................] - ETA: 1s 72/310 [=====>........................] - ETA: 1s 80/310 [======>.......................] - ETA: 1s 95/310 [========>.....................] - ETA: 1s110/310 [=========>....................] - ETA: 1s124/310 [===========>..................] - ETA: 1s136/310 [============>.................] - ETA: 0s149/310 [=============>................] - ETA: 0s162/310 [==============>...............] - ETA: 0s177/310 [================>.............] - ETA: 0s190/310 [=================>............] - ETA: 0s206/310 [==================>...........] - ETA: 0s217/310 [====================>.........] - ETA: 0s229/310 [=====================>........] - ETA: 0s238/310 [======================>.......] - ETA: 0s246/310 [======================>.......] - ETA: 0s253/310 [=======================>......] - ETA: 0s261/310 [========================>.....] - ETA: 0s271/310 [=========================>....] - ETA: 0s281/310 [==========================>...] - ETA: 0s292/310 [===========================>..] - ETA: 0s302/310 [============================>.] - ETA: 0s310/310 [==============================] - 2s 5ms/step
+INFO:     103.160.183.15:0 - "POST /colabUser/?user_id=A3NDZCQ9D9T2XM&amount=10 HTTP/1.1" 200 OK

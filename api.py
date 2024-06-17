@@ -346,8 +346,10 @@ def update_app_data():
     app.state.data["userencoded2user"] = userencoded2user
     app.state.data["book2book_encoded"] = book2book_encoded
     app.state.data["book_encoded2book"] = book_encoded2book
+    subprocess.run(["python", "getColabUserRetry.py"], check=True)
+    app.state.data["model"] = keras.models.load_model("Colab_User")
     
-    
+
 # Endpoint for root
 @app.get("/")
 async def read_root():

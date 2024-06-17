@@ -126,13 +126,12 @@ early_stopping = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=3
 history = model.fit(
     x=x_train,
     y=y_train,
-    batch_size=16, 
-    epochs=2,
-    verbose=1,
+    batch_size=32, 
+    epochs=1,
+    verbose=2,
     validation_data=(x_val, y_val),
     callbacks=[early_stopping]
 )
 
 # Save the retrained model
 model.save('Colab_User', save_format='tf')
-model.save('Colab_User.h5')
