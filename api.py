@@ -12,6 +12,8 @@ import subprocess
 import logging
 from tensorflow import keras
 from scipy.sparse import load_npz
+from fastapi import Depends
+
 
 logging.basicConfig(
     level=logging.INFO,  # Set the minimum log level (e.g., INFO, DEBUG)
@@ -102,6 +104,16 @@ async def reload_data():
     app.state.data = load_data()  # Reload data
     return {"message": "Data reloaded successfully"}
 
+# Endpoint to restart the API
+@app.post("/restart-api/")
+async def restart_api():
+    try:
+        subprocess.Popen(["./restart_server.sh"])
+        return {"message": "API is restarting..."}
+    except Exception as e:
+        logger.error(f"Failed to restart the API: {e}")
+        raise HTTPException(status_code=500, detail="Failed to restart the API")
+
 
 # ------------------------- APScheduler Setup -------------------------
 scheduler = BackgroundScheduler()
@@ -111,9 +123,9 @@ def scheduled_task():
     logger.info("Scheduled task is running...")
     try:
         subprocess.run(["python", "getChromaDB.py"], check=True)
-        subprocess.run(["python", "getFinalRatings.py"], check=True)
+        subprocess.run(["python", "getPivotTable.py"], check=True)
         subprocess.run(["python", "getColabUser.py"], check=True)
-        app.state.data = load_data()
+        restart_api()
         logger.info("Scheduled task completed successfully.")
         
     except subprocess.CalledProcessError as e:
@@ -199,8 +211,7 @@ async def recommend(id_book: int = Query(...), amount: int = Query(...)):
     }
 
 # ------------------------- Colabortive Filtering Recommendation on Users -------------------------
-@app.post("/colabUser/")
-async def recommend_for_user(user_id: str = Query(...), amount: int = Query(...)):
+def getColabUserData(): 
     books = app.state.data["books"]
     book2book_encoded = app.state.data["book2book_encoded"]
     user2user_encoded = app.state.data["user2user_encoded"]
@@ -208,14 +219,29 @@ async def recommend_for_user(user_id: str = Query(...), amount: int = Query(...)
     merged_df = app.state.data["merged_df"]
     model = app.state.data["model"]
     
-    books_watched_by_user = merged_df[merged_df.user_id == user_id]
-    books_not_watched = books[~books['id'].isin(books_watched_by_user.book_id.values)]['id']
+    return {
+        'books': books,
+        'book2book_encoded' : book2book_encoded,
+        'user2user_encoded' : user2user_encoded,
+        'book_encoded2book' : book_encoded2book,
+        'merged_df' : merged_df,
+        'model' : model,
+    }
+    
+async def get_colab_user_data():
+    return getColabUserData()
 
-    books_not_watched = list(set(books_not_watched).intersection(set(book2book_encoded.keys())))
 
-    books_not_watched = [[book2book_encoded.get(x)] for x in books_not_watched]
+@app.post("/colabUser/")
+async def recommend_for_user(user_id: str = Query(...), amount: int = Query(...), data: dict = Depends(get_colab_user_data)):
+    books_watched_by_user = data['merged_df'][data['merged_df']['user_id'] == user_id]
+    books_not_watched = data['books'][~data['books']['id'].isin(books_watched_by_user['book_id'].values)]['id']
 
-    user_encoder = user2user_encoded.get(user_id)
+    books_not_watched = list(set(books_not_watched).intersection(set(data['book2book_encoded'].keys())))
+
+    books_not_watched = [[data['book2book_encoded'].get(x)] for x in books_not_watched]
+
+    user_encoder = data['user2user_encoded'].get(user_id)
 
     if user_encoder is None:
         raise HTTPException(status_code=404, detail="User ID not found")
@@ -224,13 +250,13 @@ async def recommend_for_user(user_id: str = Query(...), amount: int = Query(...)
         ([[user_encoder]] * len(books_not_watched), books_not_watched)
     )
 
-    ratings = model.predict(user_book_array).flatten()
+    ratings = data['model'].predict(user_book_array).flatten()
     top_ratings_indices = ratings.argsort()[-amount:][::-1]
     recommended_book_ids = [
-        book_encoded2book.get(books_not_watched[x][0]) for x in top_ratings_indices
+        data['book_encoded2book'].get(books_not_watched[x][0]) for x in top_ratings_indices
     ]
 
-    recommended_books = books[books["id"].isin(recommended_book_ids)]
+    recommended_books = data['books'][data['books']["id"].isin(recommended_book_ids)]
     recommendations = []
     for index, row in recommended_books.iterrows():
         recommendations.append(row["id"])
@@ -275,6 +301,7 @@ async def add_rating(new_rating: NewRating, background_tasks: BackgroundTasks):
 
         # Schedule the task to save the updated DataFrame to the CSV file
         background_tasks.add_task(save_ratings_to_csv)
+        
 
         return {"message": "Rating added successfully"}
 
@@ -284,26 +311,42 @@ async def add_rating(new_rating: NewRating, background_tasks: BackgroundTasks):
 def save_ratings_to_csv():
     ratings_df = app.state.data["ratings_df"]
     ratings_df.to_csv("books_rating_clean_with_book_id.csv", index=False)
-    # Reloading affected data
-    books = app.state.data["books"]
-    app.state.data["merged_df"] = pd.merge(ratings_df, books, left_on='book_id', right_on='id')
-    merged_df = app.state.data["merged_df"]
-    app.state.data['user_ids'] = merged_df["user_id"].unique().tolist()
-    user_ids = app.state.data["user_ids"]
-    app.state.data['user2user_encoded'] = {x: i for i, x in enumerate(user_ids)}
-    app.state.data['userencoded2user'] = {i: x for i, x in enumerate(user_ids)}
-    
-    app.state.data['book_ids'] = merged_df["book_id"].unique().tolist()
-    book_ids = app.state.data['book_ids']
-    app.state.data['book2book_encoded'] = {x: i for i, x in enumerate(book_ids)}
-    app.state.data['book_encoded2book'] = {i: x for i, x in enumerate(book_ids)}
-    
-    user2user_encoded = app.state.data['user2user_encoded']
-    book2book_encoded = app.state.data['book2book_encoded']
+    # Call function to update app state data after saving to CSV
+    update_app_data()
+
+def update_app_data():
+    # Reload necessary data after updating ratings_df
+    books = pd.read_csv("books_data_clean_with_id.csv")
+    ratings_df = pd.read_csv("books_rating_clean_with_book_id.csv")
+    merged_df = pd.merge(ratings_df, books, left_on='book_id', right_on='id')
+
+    # Update embeddings, vectors, encodings, etc.
+    # Example: embedding = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
+    # Example: vectordb = Chroma(persist_directory=persist_directory, embedding_function=embedding)
+
+    # Update user and book encodings
+    user_ids = merged_df["user_id"].unique().tolist()
+    user2user_encoded = {x: i for i, x in enumerate(user_ids)}
+    userencoded2user = {i: x for i, x in enumerate(user_ids)}
+
+    book_ids = merged_df["book_id"].unique().tolist()
+    book2book_encoded = {x: i for i, x in enumerate(book_ids)}
+    book_encoded2book = {i: x for i, x in enumerate(book_ids)}
     merged_df["user"] = merged_df["user_id"].map(user2user_encoded)
     merged_df["book"] = merged_df["book_id"].map(book2book_encoded)
-    merged_df['rating'] = merged_df['review/score'].values.astype(np.float32)
+
+    # Update other data structures like pivot_table, similarity_score, model, etc.
+    # Example: similarity_score = cosine_similarity(pivot_table)
+
+    # Update app state data
+    app.state.data["books"] = books
+    app.state.data["ratings_df"] = ratings_df
     app.state.data["merged_df"] = merged_df
+    app.state.data["user2user_encoded"] = user2user_encoded
+    app.state.data["userencoded2user"] = userencoded2user
+    app.state.data["book2book_encoded"] = book2book_encoded
+    app.state.data["book_encoded2book"] = book_encoded2book
+    
     
 # Endpoint for root
 @app.get("/")

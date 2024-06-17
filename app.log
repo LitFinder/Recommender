@@ -919,3 +919,282 @@
 2024-06-16 18:23:31,326 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
 2024-06-16 18:23:39,514 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
 2024-06-16 18:23:39,591 - INFO - Collection langchain is not created.
+2024-06-17 12:35:27,443 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 12:35:27,444 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 12:35:27,444 - INFO - Scheduler started
+2024-06-17 12:35:33,886 - INFO - Use pytorch device_name: cuda
+2024-06-17 12:35:33,887 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 12:35:42,198 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 12:35:42,309 - INFO - Collection langchain is not created.
+2024-06-17 12:39:50,135 - INFO - Use pytorch device_name: cuda
+2024-06-17 12:39:50,136 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 12:39:56,621 - INFO - Collection langchain is not created.
+2024-06-17 13:13:32,299 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 13:13:32,300 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 13:13:32,300 - INFO - Scheduler started
+2024-06-17 13:13:38,953 - INFO - Use pytorch device_name: cuda
+2024-06-17 13:13:38,953 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 13:13:46,648 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 13:13:46,760 - INFO - Collection langchain is not created.
+2024-06-17 13:29:15,052 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 13:29:15,053 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 13:29:15,054 - INFO - Scheduler started
+2024-06-17 13:29:20,548 - INFO - Use pytorch device_name: cuda
+2024-06-17 13:29:20,548 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 13:29:26,751 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 13:29:26,858 - INFO - Collection langchain is not created.
+2024-06-17 14:14:01,788 - INFO - Use pytorch device_name: cuda
+2024-06-17 14:14:01,789 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 14:14:09,081 - INFO - Collection langchain is not created.
+2024-06-17 14:28:18,359 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 14:28:18,360 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 14:28:18,360 - INFO - Scheduler started
+2024-06-17 14:28:24,567 - INFO - Use pytorch device_name: cuda
+2024-06-17 14:28:24,567 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 14:28:30,993 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 14:28:31,131 - INFO - Collection langchain is not created.
+2024-06-17 14:29:15,278 - INFO - Scheduler has been shut down
+2024-06-17 14:29:21,143 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 14:29:21,143 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 14:29:21,143 - INFO - Scheduler started
+2024-06-17 14:29:26,851 - INFO - Use pytorch device_name: cuda
+2024-06-17 14:29:26,851 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 14:29:34,810 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 14:29:34,930 - INFO - Collection langchain is not created.
+2024-06-17 14:30:14,378 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 14:30:14,379 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 14:30:14,379 - INFO - Scheduler started
+2024-06-17 14:30:19,725 - INFO - Use pytorch device_name: cuda
+2024-06-17 14:30:19,726 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 14:30:27,928 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 14:30:28,030 - INFO - Collection langchain is not created.
+2024-06-17 14:31:53,864 - INFO - Use pytorch device_name: cuda
+2024-06-17 14:31:53,868 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 14:31:56,943 - INFO - Collection langchain is not created.
+2024-06-17 14:35:45,431 - INFO - Scheduler has been shut down
+2024-06-17 14:36:00,724 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 14:36:00,724 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 14:36:00,725 - INFO - Scheduler started
+2024-06-17 14:36:05,699 - INFO - Use pytorch device_name: cuda
+2024-06-17 14:36:05,699 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 14:36:13,501 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 14:36:13,633 - INFO - Collection langchain is not created.
+2024-06-17 14:36:49,466 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 14:36:49,467 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 14:36:49,467 - INFO - Scheduler started
+2024-06-17 14:36:55,028 - INFO - Use pytorch device_name: cuda
+2024-06-17 14:36:55,028 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 14:36:59,508 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 14:36:59,617 - INFO - Collection langchain is not created.
+2024-06-17 14:37:36,317 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 14:37:36,318 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 14:37:36,319 - INFO - Scheduler started
+2024-06-17 14:37:41,395 - INFO - Use pytorch device_name: cuda
+2024-06-17 14:37:41,395 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 14:37:48,899 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 14:37:49,022 - INFO - Collection langchain is not created.
+2024-06-17 14:40:16,485 - INFO - Scheduler has been shut down
+2024-06-17 14:40:21,205 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 14:40:21,205 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 14:40:21,205 - INFO - Scheduler started
+2024-06-17 14:40:25,845 - INFO - Use pytorch device_name: cuda
+2024-06-17 14:40:25,845 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 14:40:31,226 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 14:40:31,306 - INFO - Collection langchain is not created.
+2024-06-17 14:41:06,190 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 14:41:06,191 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 14:41:06,191 - INFO - Scheduler started
+2024-06-17 14:41:10,288 - INFO - Use pytorch device_name: cuda
+2024-06-17 14:41:10,288 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 14:41:15,072 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 14:41:15,187 - INFO - Collection langchain is not created.
+2024-06-17 14:41:51,020 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 14:41:51,021 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 14:41:51,021 - INFO - Scheduler started
+2024-06-17 14:41:55,643 - INFO - Use pytorch device_name: cuda
+2024-06-17 14:41:55,643 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 14:42:03,088 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 14:42:03,165 - INFO - Collection langchain is not created.
+2024-06-17 14:42:44,609 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 14:42:44,609 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 14:42:44,611 - INFO - Scheduler started
+2024-06-17 14:42:49,214 - INFO - Use pytorch device_name: cuda
+2024-06-17 14:42:49,215 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 14:42:56,727 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 14:42:56,815 - INFO - Collection langchain is not created.
+2024-06-17 14:46:47,153 - INFO - Use pytorch device_name: cuda
+2024-06-17 14:46:47,160 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 14:46:50,159 - INFO - Collection langchain is not created.
+2024-06-17 14:50:32,563 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 14:50:32,564 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 14:50:32,564 - INFO - Scheduler started
+2024-06-17 14:50:38,431 - INFO - Use pytorch device_name: cuda
+2024-06-17 14:50:38,431 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 14:50:46,938 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 14:50:47,065 - INFO - Collection langchain is not created.
+2024-06-17 14:52:03,492 - INFO - Use pytorch device_name: cuda
+2024-06-17 14:52:03,493 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 14:52:07,230 - INFO - Collection langchain is not created.
+2024-06-17 14:54:23,465 - INFO - Use pytorch device_name: cuda
+2024-06-17 14:54:23,465 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 14:54:26,447 - INFO - Collection langchain is not created.
+2024-06-17 14:55:37,035 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 14:55:37,035 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 14:55:37,035 - INFO - Scheduler started
+2024-06-17 14:55:42,704 - INFO - Use pytorch device_name: cuda
+2024-06-17 14:55:42,705 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 14:55:46,976 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 14:55:47,098 - INFO - Collection langchain is not created.
+2024-06-17 14:57:27,217 - INFO - Scheduler has been shut down
+2024-06-17 14:57:33,487 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 14:57:33,488 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 14:57:33,488 - INFO - Scheduler started
+2024-06-17 14:57:39,026 - INFO - Use pytorch device_name: cuda
+2024-06-17 14:57:39,027 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 14:57:45,252 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 14:57:45,356 - INFO - Collection langchain is not created.
+2024-06-17 15:02:49,212 - INFO - Scheduler has been shut down
+2024-06-17 15:02:55,127 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 15:02:55,128 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 15:02:55,128 - INFO - Scheduler started
+2024-06-17 15:03:00,508 - INFO - Use pytorch device_name: cuda
+2024-06-17 15:03:00,508 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 15:03:07,330 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 15:03:07,437 - INFO - Collection langchain is not created.
+2024-06-17 15:03:46,187 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 15:03:46,187 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 15:03:46,188 - INFO - Scheduler started
+2024-06-17 15:03:52,465 - INFO - Use pytorch device_name: cuda
+2024-06-17 15:03:52,465 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 15:03:57,719 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 15:03:57,862 - INFO - Collection langchain is not created.
+2024-06-17 15:05:33,412 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 15:05:33,413 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 15:05:33,413 - INFO - Scheduler started
+2024-06-17 15:05:39,087 - INFO - Use pytorch device_name: cuda
+2024-06-17 15:05:39,087 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 15:05:47,235 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 15:05:47,348 - INFO - Collection langchain is not created.
+2024-06-17 15:06:29,848 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 15:06:29,850 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 15:06:29,850 - INFO - Scheduler started
+2024-06-17 15:06:35,776 - INFO - Use pytorch device_name: cuda
+2024-06-17 15:06:35,776 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 15:06:42,369 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 15:06:42,454 - INFO - Collection langchain is not created.
+2024-06-17 15:07:18,434 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 15:07:18,435 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 15:07:18,435 - INFO - Scheduler started
+2024-06-17 15:07:23,776 - INFO - Use pytorch device_name: cuda
+2024-06-17 15:07:23,776 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 15:07:29,723 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 15:07:29,810 - INFO - Collection langchain is not created.
+2024-06-17 15:08:04,473 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 15:08:04,473 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 15:08:04,473 - INFO - Scheduler started
+2024-06-17 15:08:09,319 - INFO - Use pytorch device_name: cuda
+2024-06-17 15:08:09,320 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 15:08:18,496 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 15:08:18,603 - INFO - Collection langchain is not created.
+2024-06-17 15:13:16,785 - INFO - Scheduler has been shut down
+2024-06-17 15:13:21,732 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 15:13:21,732 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 15:13:21,732 - INFO - Scheduler started
+2024-06-17 15:13:26,103 - INFO - Use pytorch device_name: cuda
+2024-06-17 15:13:26,103 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 15:13:34,285 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 15:13:34,377 - INFO - Collection langchain is not created.
+2024-06-17 15:17:33,490 - INFO - Use pytorch device_name: cuda
+2024-06-17 15:17:33,497 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 15:17:36,625 - INFO - Collection langchain is not created.
+2024-06-17 15:18:54,963 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 15:18:54,964 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 15:18:54,964 - INFO - Scheduler started
+2024-06-17 15:19:00,908 - INFO - Use pytorch device_name: cuda
+2024-06-17 15:19:00,909 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 15:19:07,196 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 15:19:07,321 - INFO - Collection langchain is not created.
+2024-06-17 15:21:29,282 - INFO - Scheduler has been shut down
+2024-06-17 15:21:35,094 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 15:21:35,094 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 15:21:35,094 - INFO - Scheduler started
+2024-06-17 15:21:40,434 - INFO - Use pytorch device_name: cuda
+2024-06-17 15:21:40,435 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 15:21:46,616 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 15:21:46,730 - INFO - Collection langchain is not created.
+2024-06-17 15:24:41,853 - INFO - Scheduler has been shut down
+2024-06-17 15:24:46,452 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 15:24:46,452 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 15:24:46,452 - INFO - Scheduler started
+2024-06-17 15:24:50,923 - INFO - Use pytorch device_name: cuda
+2024-06-17 15:24:50,924 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 15:24:58,878 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 15:24:58,944 - INFO - Collection langchain is not created.
+2024-06-17 15:26:05,263 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 15:26:05,263 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 15:26:05,263 - INFO - Scheduler started
+2024-06-17 15:26:10,177 - INFO - Use pytorch device_name: cuda
+2024-06-17 15:26:10,177 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 15:26:16,995 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 15:26:17,082 - INFO - Collection langchain is not created.
+2024-06-17 15:28:54,456 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 15:28:54,456 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 15:28:54,457 - INFO - Scheduler started
+2024-06-17 15:28:59,840 - INFO - Use pytorch device_name: cuda
+2024-06-17 15:28:59,840 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 15:29:06,049 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 15:29:06,157 - INFO - Collection langchain is not created.
+2024-06-17 15:30:21,627 - INFO - Scheduler has been shut down
+2024-06-17 15:30:27,028 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 15:30:27,029 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 15:30:27,029 - INFO - Scheduler started
+2024-06-17 15:30:32,544 - INFO - Use pytorch device_name: cuda
+2024-06-17 15:30:32,544 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 15:30:39,313 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 15:30:39,433 - INFO - Collection langchain is not created.
+2024-06-17 15:38:40,494 - INFO - Scheduler has been shut down
+2024-06-17 15:38:45,875 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 15:38:45,875 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 15:38:45,875 - INFO - Scheduler started
+2024-06-17 15:38:50,501 - INFO - Use pytorch device_name: cuda
+2024-06-17 15:38:50,501 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 15:38:56,564 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 15:38:56,664 - INFO - Collection langchain is not created.
+2024-06-17 15:43:13,718 - INFO - Scheduler has been shut down
+2024-06-17 15:43:19,040 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 15:43:19,040 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 15:43:19,041 - INFO - Scheduler started
+2024-06-17 15:43:24,002 - INFO - Use pytorch device_name: cuda
+2024-06-17 15:43:24,002 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 15:43:33,963 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 15:43:34,101 - INFO - Collection langchain is not created.
+2024-06-17 15:46:02,638 - INFO - Scheduler has been shut down
+2024-06-17 15:46:07,621 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 15:46:07,621 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 15:46:07,621 - INFO - Scheduler started
+2024-06-17 15:48:23,407 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 15:48:23,407 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 15:48:23,408 - INFO - Scheduler started
+2024-06-17 15:53:35,076 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 15:53:35,076 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 15:53:35,076 - INFO - Scheduler started
+2024-06-17 15:53:39,837 - INFO - Use pytorch device_name: cuda
+2024-06-17 15:53:39,837 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 15:53:46,982 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 15:53:47,058 - INFO - Collection langchain is not created.
+2024-06-17 16:01:17,421 - INFO - Scheduler has been shut down
+2024-06-17 16:01:22,612 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 16:01:22,613 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 16:01:22,613 - INFO - Scheduler started
+2024-06-17 16:01:27,434 - INFO - Use pytorch device_name: cuda
+2024-06-17 16:01:27,434 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 16:01:35,160 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 16:01:35,238 - INFO - Collection langchain is not created.
+2024-06-17 16:04:24,653 - INFO - Scheduler has been shut down
+2024-06-17 16:04:29,481 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2024-06-17 16:04:29,481 - INFO - Added job "scheduled_task" to job store "default"
+2024-06-17 16:04:29,481 - INFO - Scheduler started
+2024-06-17 16:04:33,988 - INFO - Use pytorch device_name: cuda
+2024-06-17 16:04:33,989 - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-06-17 16:04:40,845 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2024-06-17 16:04:40,952 - INFO - Collection langchain is not created.
