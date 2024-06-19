@@ -1,4 +1,3 @@
-```markdown
 # Book Recommendation System
 
 ## Description
