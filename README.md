@@ -41,4 +41,3 @@ This project consists of a book recommendation system that uses three algorithms
 
 ## Known Issues
 - If the ColabUser recommender doesn't work for a new user, ensure the line to run `getColabUserRetry.py` in `api.py` is uncommented. (This line is commented out by default because the model requires retraining for new users, which is compute-intensive and not feasible within our current GCP limitations.)
-```
