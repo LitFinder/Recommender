@@ -29,7 +29,7 @@ def load_data():
     # Load your data
     books = pd.read_csv("books_data_clean_with_id.csv")
     ratings_df  = pd.read_csv("books_rating_clean_with_book_id.csv")
-    # final_ratings = pd.read_csv("final_ratings.csv")
+# final_ratings = pd.read_csv("final_ratings.csv")
     # pivot_table = pd.read_csv("PivotTable.csv")
     merged_df = pd.merge(ratings_df, books, left_on='book_id', right_on='id')
 
@@ -346,8 +346,8 @@ def update_app_data():
     app.state.data["userencoded2user"] = userencoded2user
     app.state.data["book2book_encoded"] = book2book_encoded
     app.state.data["book_encoded2book"] = book_encoded2book
-    subprocess.run(["python", "getColabUserRetry.py"], check=True)
-    app.state.data["model"] = keras.models.load_model("Colab_User")
+    # subprocess.run(["python", "getColabUserRetry.py"], check=True)
+    # app.state.data["model"] = keras.models.load_model("Colab_User")
     
 
 # Endpoint for root

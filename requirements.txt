@@ -1,0 +1,11 @@
+fastapi
+tensorflow==2.11.1
+pydantic
+numpy
+pandas
+typing-extensions
+scikit-learn
+langchain-chroma==0.1.1
+langchain-community==0.2.4
+apscheduler
+scipy
